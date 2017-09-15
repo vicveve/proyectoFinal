@@ -255,7 +255,11 @@ class PuntoCreateViewController: UIViewController,UIImagePickerControllerDelegat
         
            }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        txtNombre.resignFirstResponder()
+        
+    }
+
     
 
 }

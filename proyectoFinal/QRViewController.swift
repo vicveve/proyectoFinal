@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class QRViewController: UINavigationController, AVCaptureMetadataOutputObjectsDelegate {
+class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
     var sesion : AVCaptureSession?
     var capa : AVCaptureVideoPreviewLayer?
@@ -74,8 +74,24 @@ class QRViewController: UINavigationController, AVCaptureMetadataOutputObjectsDe
             marcoQR?.frame = objBorde.bounds
             if(objMetaDato.stringValue != nil){
                 self.urls = objMetaDato.stringValue
-                let navc = self.navigationController
-                navc?.performSegue(withIdentifier: "detalleURL", sender: self)
+                
+           
+               /* sesion?.stopRunning()
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LecturaQR") as! LecturaQRViewController
+                nextViewController.urls = urls
+                self.present(nextViewController, animated:true, completion:nil)
+                */
+               let navc = self.navigationController
+                if navc != nil{
+                    navc?.performSegue(withIdentifier: "detalleURL", sender: self)
+                }
+                else{
+                    print("No se pudo crear el segue")
+                }
+ 
+                
             }
             
         }

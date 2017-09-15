@@ -27,7 +27,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="QR" image="static_qr_code_without_logo.jpg"/>
                                 <connections>
-                                    <segue destination="eeS-Ic-6YR" kind="show" id="05p-1a-6O3"/>
+                                    <segue destination="sYZ-LE-SeK" kind="popoverPresentation" popoverAnchorView="tCy-Qo-HbL" id="b9R-lJ-QuS">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju3-t5-FmM">
@@ -145,7 +147,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="eeS-Ic-6YR" kind="show" id="Vp4-Yx-CLZ"/>
+                                            <segue destination="sYZ-LE-SeK" kind="showDetail" id="VgU-Nj-IY0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjl-OM-ey6">
@@ -313,7 +315,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="bEx-dh-saF">
             <objects>
-                <navigationController id="sYZ-LE-SeK" customClass="NavigationViewController" customModule="proyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavQR" id="sYZ-LE-SeK" customClass="NavigationViewController" customModule="proyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hpi-dg-5fe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -325,12 +327,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adt-hl-HXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1310" y="391"/>
+            <point key="canvasLocation" x="-1564" y="383"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bj3-jX-tiV">
             <objects>
-                <viewController id="eeS-Ic-6YR" customClass="QRViewController" customModule="proyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRCaptura" id="eeS-Ic-6YR" customClass="QRViewController" customModule="proyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j5n-k1-fM3"/>
                         <viewControllerLayoutGuide type="bottom" id="noH-MS-IeY"/>
@@ -340,9 +342,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="icb-PK-0Pu">
-                        <barButtonItem key="leftBarButtonItem" title="Regresar" id="MTX-72-Uhm"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="icb-PK-0Pu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQv-ys-jdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -351,7 +351,7 @@
         <!--LecturaQR View Controller-->
         <scene sceneID="5iv-8k-R5m">
             <objects>
-                <viewController id="4jH-mP-WqA" customClass="LecturaQRViewController" customModule="proyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LecturaQR" id="4jH-mP-WqA" customClass="LecturaQRViewController" customModule="proyectoFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jYR-Ie-yGe"/>
                         <viewControllerLayoutGuide type="bottom" id="9gt-Lg-agq"/>
@@ -375,6 +375,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="urlLectura" destination="Jgi-y4-Ywo" id="jRG-OH-3rW"/>
                         <outlet property="vistaWeb" destination="RDb-UE-QJc" id="W7r-6f-7lZ"/>
@@ -499,7 +501,7 @@
         <image name="static_qr_code_without_logo.jpg" width="330" height="330"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0PY-WJ-tpl"/>
-        <segue reference="0Wu-X4-j4g"/>
+        <segue reference="VgU-Nj-IY0"/>
+        <segue reference="h4T-Js-4ul"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -187,7 +187,10 @@ class RutACreateViewController: UIViewController,UIImagePickerControllerDelegate
         destino.rutaActual = rutaNew
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        txtNombre.resignFirstResponder()
+        txtDescripcion.resignFirstResponder()
+    }
     
 
 }
