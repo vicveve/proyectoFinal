@@ -22,6 +22,11 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         // Do any additional setup after loading the view.
         
         self.title = "QR Principal"
+        
+      /*  navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Regresar", style: UIBarButtonItemStyle.plain, target: self, action: #selector(QRViewController.RegresarVista))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Menu Inicial", style: UIBarButtonItemStyle.plain, target: self, action: #selector(QRViewController.MenuPrincipal))
+       */
+        
         let dispositivo = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do{
@@ -54,6 +59,28 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         }
 
     }
+    
+    func RegresarVista(){
+       // _ = navigationController?.popViewController(animated: true)
+       /* if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }*/
+        /*let navc = self.navigationController
+        if navc != nil{
+            navc?.performSegue(withIdentifier: "otro", sender: self)
+        }
+        else{
+            print("No se pudo crear el segue")
+        }*/
+
+    }
+    
+    func MenuPrincipal(){
+        _ = navigationController?.popToRootViewController(animated: true)
+    }
+  
     
     override func viewWillAppear(_ animated: Bool) {
         sesion?.startRunning()
@@ -113,5 +140,12 @@ class QRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func Regresa(_ sender: Any) {
+        
+        //unWindPrevio
+        
+        self.performSegue(withIdentifier: "unWindPrevio", sender: nil)
+        
+    }
 
 }

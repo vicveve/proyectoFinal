@@ -32,12 +32,15 @@ class NavigationViewController: UINavigationController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let origen = sender as! QRViewController
-        let destino = segue.destination as! LecturaQRViewController
-        origen.sesion?.stopRunning()
-        destino.urls = origen.urls
+            let origen = sender as! QRViewController
+            let destino = segue.destination as! LecturaQRViewController
+            origen.sesion?.stopRunning()
+            destino.urls = origen.urls
+       
 
     }
+    
+    
     
     
     

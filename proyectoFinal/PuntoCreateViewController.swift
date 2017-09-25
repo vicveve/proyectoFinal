@@ -176,7 +176,7 @@ class PuntoCreateViewController: UIViewController,UIImagePickerControllerDelegat
         
         alerta.addAction(acctionOk)
         
-        var puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
+        let puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
         var puntoItem : MKMapItem!
         puntoItem = MKMapItem(placemark: puntoLugar)
         puntoItem.name = txtNombre.text!
